@@ -34,7 +34,7 @@ public class Teacher {
 			regexp ="^09\\d([- ](\\d){4}){2}$", 
 			message="Please enter valid phone number.")
 	@Column(nullable = false)
-	private String phone;
+	private String phone; // 2 digit + 1\\d + minus or space + 4digit multiply by 2
 	
 	@NotBlank(message = "Please enter email address.")
 	@Email(message = "Please enter valid email.")
