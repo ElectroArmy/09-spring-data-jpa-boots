@@ -124,7 +124,9 @@
         /* End Required */
         /* End Circle Text Styles */
     </style>
-
+    
+    <!-- TextEffect Color -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 
 </head>
 <body>
@@ -142,7 +144,7 @@
 	
 	<!-- Text Effect -->
 
-        <script>
+    <script>
         // geting canvas by id c
         var c = document.getElementById("c");
         var ctx = c.getContext("2d");
@@ -197,11 +199,12 @@
 
         
         </script>
+	
 	<!-- Text Falling End -->
 	
  
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--  -->
 
     <script type="text/javascript">
         /*<![CDATA[*/
