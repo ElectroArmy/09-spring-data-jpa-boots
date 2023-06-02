@@ -15,9 +15,11 @@ public class Category {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@Column(unique = true, nullable = false)
+	@Column(nullable = false, unique = true)
 	private String name;
-	
-	
-	
+
+	public Object getName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

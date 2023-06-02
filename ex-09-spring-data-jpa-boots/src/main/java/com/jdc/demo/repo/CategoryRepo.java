@@ -4,9 +4,8 @@ import org.springframework.data.jpa.repository.support.JpaRepositoryImplementati
 
 import com.jdc.demo.entity.Category;
 
-public interface CategoryRepo extends JpaRepositoryImplementation<Category, Integer> {
-
+public interface CategoryRepo extends JpaRepositoryImplementation<Category, Integer>{
+	
+	
 	Category findOneByName(String name);
-	
-	
 }
