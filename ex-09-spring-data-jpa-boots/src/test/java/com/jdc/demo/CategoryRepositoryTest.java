@@ -35,7 +35,7 @@ public class CategoryRepositoryTest {
 	
 	@ParameterizedTest
 	@ValueSource(strings = {
-			"Foods", "Drinks ", "Accessories", ""
+			"foods","Drinks","Accessorie",""
 	})
 	void test_find_one_by_name_not_found(String name) {
 		var result = repo.findOneByName(name);
