@@ -5,6 +5,7 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.stereotype.Service;
 
 import com.jdc.demo.service.repo.AccountRepo;
@@ -15,8 +16,20 @@ public class AccountDetailsService implements UserDetailsService{
 	@Autowired
 	private AccountRepo repo;
 
+	private InMemoryUserDetailsManager adminUserDetails;
+	
+	public AccountDetailsService() {
+		adminUserDetails = new InMemoryUserDetailsManager();
+	}
+	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		
+		var admin = adminUserDetails.loadUserByUsername(username);
+		
+		if (null != admin) {
+			return admin;
+		}
 		
 		return repo.findOneByLoginId(username)
 				.map(a -> User.builder()
